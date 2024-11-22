@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Illions</h1>
+    <p>Enter a number, and I'll tell you the corresponding 'illion'.</p>
+    <input type="number" id="illionInput" placeholder="Enter a number">
+    <button onclick="getIllion()">Get Illion</button>
+    <div id="output"></div>
+
+    <script>
+        function getIllion() {
+            const input = document.getElementById("illionInput").value;
+            const illions = {
+                0: "0",
+                1: "Million",
+                2: "Billion",
+                3: "Trillion"
+            };
+            
+            const output = illions[input] || "Invalid input, try 0-3!";
+            document.getElementById("output").textContent = output;
+        }
+    </script>
+</body>
+</html>
