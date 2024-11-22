@@ -24,22 +24,23 @@
 </head>
 <body>
     <h1>Illions</h1>
-    <p>Enter a number, and I'll tell you the corresponding 'illion'.</p>
-    <input type="number" id="illionInput" placeholder="Enter a number">
+    <p>Enter a number from 0 to 21, and I'll tell you the corresponding 'illion'.</p>
+    <input type="number" id="illionInput" placeholder="Enter a number" min="0" max="21">
     <button onclick="getIllion()">Get Illion</button>
     <div id="output"></div>
 
     <script>
         function getIllion() {
             const input = document.getElementById("illionInput").value;
-            const illions = {
-                0: "0",
-                1: "Million",
-                2: "Billion",
-                3: "Trillion"
-            };
             
-            const output = illions[input] || "Invalid input, try 0-3!";
+            const illions = [
+                "0", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", 
+                "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion", "Duodecillion", 
+                "Tredecillion", "Quattuordecillion", "Quindecillion", "Sexdecillion", "Septendecillion", 
+                "Octodecillion", "Novemdecillion", "Vigintillion", "Unvigintillion"
+            ];
+            
+            const output = illions[input] || "Invalid input, please enter a number from 0 to 21!";
             document.getElementById("output").textContent = output;
         }
     </script>
